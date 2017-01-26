@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="stores">
+
+
+    <div class="row">
+     <div class="col-sm-offset-2 col-sm-9">
+       <form action="/store/new" method="post" accept-charset="utf-8">
+       {{ form.csrf_token }}
+       <div class="form-group">
+         <label class="control-label col-sm-3" for="title">{{ form.title.label }}:</label>
+         <div class="col-sm-9">
+           <div class="">{{ form.title }}</div>
+         </div>
+       </div><br><br>
+       <div class="form-group">
+         <label class="control-label col-sm-3" for="description">{{ form.description.label }}:</label>
+         <div class="col-sm-9">
+           <div>{{ form.description }}</div>
+         </div>
+       </div><br><br>
+       <div class="form-group">
+         <label class="control-label col-sm-3" for="description">{{ form.user_id.label }}:</label>
+         <div class="col-sm-9">
+           <div>{{ form.user_id }}</div>
+         </div>
+       </div><br><br>
+       <div class="form-group">
+         <div class="col-sm-offset-4 col-sm-2">
+           <button type="submit" class="btn btn-success">Create</button>
+         </div>
+         <div class="col-sm-6">
+           <a href="/store">Already have a store</a>
+         </div>
+       </div>
+     </form>
+
+     </div>
+   </div>
+
+    <hr>
+  </div>
+
+{% endblock %}
